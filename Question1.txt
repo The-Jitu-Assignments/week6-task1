@@ -1,1 +1,23 @@
-welcome
+import React, { useState, useEffect } from 'react';
+
+const Post = () => {
+  const [posts, setPosts] = useState([]);
+  const [id, setId] = useState('2');
+
+  useEffect(() => {
+    if (id) {
+      fetchPost()
+    }
+  }, [id]);
+
+  return (
+    <div>
+      <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
+      <p>
+          {JSON.stringify(posts)}
+      </p>
+    </div>
+  )
+}
+
+export default Post;
