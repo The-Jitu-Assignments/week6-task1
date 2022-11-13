@@ -1,0 +1,6 @@
+Why did we move from Context API to Redux?
+
+  Redux has a better code organization with separate UI logic and state 
+  management logic unlike in Context API where UI Logic and State management
+  logic are in the same component. Also Redux provides access to Redux Dev 
+  Tools which helps in debugging.
