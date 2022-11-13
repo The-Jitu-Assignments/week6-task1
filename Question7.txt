@@ -1,0 +1,12 @@
+Explain the code below
+
+let x = [1, 2, 3, 4] === [1, 2, 3, 4];
+console.log(x);
+
+x = 'hello' === 'hello';
+console.log(x);
+
+The first console.log prints false because two arrays can not be equal even if
+the contain same elements. This is because they are stored in different location
+while the second console.log prints true because it compares strings which are
+primitive data type are they are compared by value;
