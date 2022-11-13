@@ -1,0 +1,59 @@
+Hooks used for performance optimization in React....
+
+1. Use Memo Hook.
+  This hook is used to return memoized value. It is used by react to keep expensive, resource
+  intensive functions from needlessly running.
+  Best Example is to avoid unnecessary rendering of the list when the component is called even
+  if the items in the array has not changed.
+
+  import { useMemo } from 'react';
+
+  const Card = ({ data }) => {
+    const listItem = useMemo(() => (
+      <>
+        {data.map((item) => (
+          <li>
+            {item.name}
+          </li>
+        ))}
+      </>
+    ), [data]);
+
+    return (
+      <div>
+        <ul>
+          {listItem}
+        </ul>
+      </div>
+    )
+  }
+
+  export default Card;
+
+
+
+2. Use Callback Hook.
+  This hook is used to return a memoized callback function. It is used to prevent a component from 
+  from re-rendering unless its props have changed.
+
+  import { useCallback, useState } from 'react';
+
+  const MyComponent = () => {
+    const [count, setCount] = useState(0);
+
+    const handleCount = useCallback(() => {
+      setCount(prev => prev + 1);
+    }, [count]);
+
+    return (
+      <Button onClick={handleCount} />;
+    )
+  }
+
+  const Button = ({ handleCount }) => {
+    return (
+      <button onClick={handleCount}>
+        Add Count
+      </button>
+    )
+  }
