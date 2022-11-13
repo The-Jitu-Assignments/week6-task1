@@ -1,0 +1,5 @@
+Why did we move from Redux to Redux Toolkit?
+
+1. Configuring a Redux store is too complicated
+2. Redux depends on other different packages so as to do something useful.
+3. Redux requires too much boilerplate code unlike Redux Toolkit.
