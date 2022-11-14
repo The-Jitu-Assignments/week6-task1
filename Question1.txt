@@ -11,9 +11,7 @@ const Post = () => {
   }
 
   useEffect(() => {
-    if (id) {
-      fetchPost()
-    }
+    fetchPost();
   }, [id]);
 
   return (
